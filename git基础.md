@@ -173,3 +173,22 @@ git remote add origin git@github.com:Ws1118/Novice.git
 - 多人编辑一行数据
   - 将克隆文件编辑结束后， 提交：`git add .  `   加备注：`git commit -m "init"  ` 推送 `git push origin master`（版本问题会报错）把远程修改的导入本地：`git pull`  再次推送： `git push origin master`，报错 打开修改文件，手动删除乱码
   -  提交：`git add .  `   加备注：`git commit -m "init"  `查看仓库状态：`git status `   为 clean  推送 `git push origin master`  推送成功，刷新GitHub
+  - 多分支协作流程
+
+  - 在本地创建新的分支
+
+    - 查看当前分支：`git branch`提交：`git add .  `   加备注：`git commit -m "init"  `创建分支 `dev`：`git branch dev`  查看当前分支：`git branch`  进入`dev` 分支：`git checkout dev`  创建`soft`文件夹：![image-20200919142944119](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200919142944119.png)
+
+      提交：`git add .  `   加备注：`git commit -m "init"  `  查看仓库状态：`git status `    推送：`git push --set-upstream origin dev`    远程刷新。
+
+- 协作者在DEV分支开发
+  
+- 推送：`git pull`  查看分支： `git branch`  创建分支：`git checkout dev`  查看分支：`git branch` 提交：`git add .  `   加备注：`git commit -m "init"  `   推送：`git push origin dev`  推送： `git pull`![image-20200919170549049](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200919170549049.png)
+  
+- 分支的合并
+  
+- （dev分支合并到master分支）`git checkout master`  `git merge dev`  `git add .` `git commit -m "  "`  `git pull`  `git status`  `git push`  远程刷新。
+  
+- 本地和远程分支的删除
+  - 删除本地:`git branch -d dev`  查看：`git branch`
+  - 删除远程：:`git branch -r -d dev` `git push origin :dev`![Snipaste_2020-09-19_17-24-08](C:\Users\dell\Desktop\Snipaste_2020-09-19_17-24-08.png)
